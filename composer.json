@@ -1,0 +1,15 @@
+{
+    "name": "daniel.szwarc/rabbit",
+    "require": {
+        "php-amqplib/php-amqplib": "2.*"
+    },
+    "autoload": {
+        "psr-0": {"Rabbit": "src/"}
+    },
+    "authors": [
+        {
+            "name": "Daniel Szwarc",
+            "email": "daszwarc@olx.pl"
+        }
+    ]
+}
