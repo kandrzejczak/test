@@ -1,5 +1,5 @@
 <?php
-
+namespace Rabbit\recommendation\domain\repository;
 
 class ProductRepository
 {
@@ -13,7 +13,7 @@ class ProductRepository
      */
     public function getAll(): array
     {
-
+        return [];
     }
 
     /**

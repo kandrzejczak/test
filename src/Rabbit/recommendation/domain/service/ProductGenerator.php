@@ -1,5 +1,8 @@
 <?php
+namespace Rabbit\recommendation\domain\service;
 
+use Rabbit\recommendation\domain\product\ProductFactory;
+use Rabbit\recommendation\domain\repository\ProductRepository;
 
 class ProductGenerator
 {
