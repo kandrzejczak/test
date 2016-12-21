@@ -1,5 +1,5 @@
 <?php
-
+namespace Rabbit\recommendation\domain\product;
 
 class Product
 {
