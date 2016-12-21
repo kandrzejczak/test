@@ -28,10 +28,12 @@ class Product
 
     /**
      * @param string $name
+     * @return $this
      */
     public function setName(string $name)
     {
         $this->name = $name;
+        return $this;
     }
 
     /**
@@ -44,10 +46,12 @@ class Product
 
     /**
      * @param CategoryId $categoryId
+     * @return $this
      */
     public function setCategoryId(CategoryId $categoryId)
     {
         $this->categoryId = $categoryId;
+        return $this;
     }
 
     /**
@@ -60,9 +64,11 @@ class Product
 
     /**
      * @param Price $price
+     * @return $this
      */
     public function setPrice(Price $price)
     {
         $this->price = $price;
+        return $this;
     }
 }
