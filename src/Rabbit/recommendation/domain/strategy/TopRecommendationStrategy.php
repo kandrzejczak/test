@@ -12,6 +12,15 @@ class TopRecommendationStrategy implements RecommendationStrategies
     private $productRepository;
 
     /**
+     * TopRecommendationStrategy constructor.
+     * @param ProductRepository $productRepository
+     */
+    public function __construct(ProductRepository $productRepository)
+    {
+        $this->productRepository = $productRepository;
+    }
+
+    /**
      * @return Product[]
      */
     public function getRecommendedProducts(int $maxProductsCount): array
