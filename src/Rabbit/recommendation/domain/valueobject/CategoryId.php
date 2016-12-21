@@ -1,5 +1,5 @@
 <?php
-
+namespace Rabbit\recommendation\domain\valueobject;
 
 class CategoryId
 {

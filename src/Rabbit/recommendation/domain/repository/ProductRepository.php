@@ -1,11 +1,16 @@
 <?php
 namespace Rabbit\recommendation\domain\repository;
 
+use Rabbit\recommendation\domain\product\Product;
+use Rabbit\recommendation\domain\valueobject\UserId;
+
 class ProductRepository
 {
-    public function save()
-    {
+    static $products = [];
 
+    public function save(Product $product)
+    {
+        static::$products[] = $product;
     }
 
     /**
@@ -13,7 +18,7 @@ class ProductRepository
      */
     public function getAll(): array
     {
-        return [];
+        return static::$products;
     }
 
     /**
@@ -21,7 +26,7 @@ class ProductRepository
      */
     public function getTop(): array
     {
-
+        return static::$products;
     }
 
     /**
@@ -30,6 +35,6 @@ class ProductRepository
      */
     public function getByUserId(UserId $userId): array
     {
-
+        return static::$products;
     }
 }

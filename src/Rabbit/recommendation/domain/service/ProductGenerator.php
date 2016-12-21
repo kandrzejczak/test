@@ -19,10 +19,12 @@ class ProductGenerator
     /**
      * ProductGenerator constructor.
      * @param ProductRepository $productRepository
+     * @param ProductFactory $productFactory
      */
-    public function __construct(ProductRepository $productRepository)
+    public function __construct(ProductRepository $productRepository, ProductFactory $productFactory)
     {
         $this->productRepository = $productRepository;
+        $this->productFactory = $productFactory;
     }
 
     public function generateProducts()

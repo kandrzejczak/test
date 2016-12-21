@@ -1,6 +1,9 @@
 <?php
 namespace Rabbit\recommendation\domain\product;
 
+use Rabbit\recommendation\domain\valueobject\CategoryId;
+use Rabbit\recommendation\domain\valueobject\Price;
+
 class Product
 {
     /**

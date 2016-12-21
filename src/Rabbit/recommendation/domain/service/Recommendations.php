@@ -1,5 +1,10 @@
 <?php
+namespace Rabbit\recommendation\domain\service;
 
+use Rabbit\recommendation\domain\product\Product;
+use Rabbit\recommendation\domain\strategy\FilterStrategiesFactory;
+use Rabbit\recommendation\domain\strategy\RecommendationStrategiesFactory;
+use Rabbit\recommendation\domain\valueobject\UserId;
 
 class Recommendations
 {

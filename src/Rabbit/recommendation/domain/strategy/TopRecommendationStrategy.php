@@ -1,5 +1,5 @@
 <?php
-
+namespace Rabbit\recommendation\domain\strategy;
 
 class TopRecommendationStrategy implements RecommendationStrategies
 {
