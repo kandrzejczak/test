@@ -1,9 +1,10 @@
 <?php
 namespace Rabbit\recommendation\domain\strategy;
 
+use Rabbit\recommendation\domain\product\Product;
 use Rabbit\recommendation\domain\repository\ProductRepository;
 
-class RecommendationStrategiesFactory
+class RandomRecommendationStrategy implements RecommendationStrategies
 {
     /**
      * @var ProductRepository;
@@ -11,7 +12,7 @@ class RecommendationStrategiesFactory
     private $productRepository;
 
     /**
-     * RecommendationStrategiesFactory constructor.
+     * TopRecommendationStrategy constructor.
      * @param ProductRepository $productRepository
      */
     public function __construct(ProductRepository $productRepository)
@@ -20,13 +21,12 @@ class RecommendationStrategiesFactory
     }
 
     /**
-     * @return RecommendationStrategies[]
+     * @return Product[]
      */
-    public function create(): array
+    public function getRecommendedProducts(int $maxProductsCount): array
     {
-        return [
-            new TopRecommendationStrategy($this->productRepository),
-            new RandomRecommendationStrategy($this->productRepository)
-        ];
+        $products = $this->productRepository->getAll();
+        shuffle($products);
+        return array_slice($products, 0, $maxProductsCount);
     }
 }
