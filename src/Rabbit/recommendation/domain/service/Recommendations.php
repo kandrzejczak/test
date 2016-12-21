@@ -42,26 +42,17 @@ class Recommendations
 
         foreach ($strategies as $strategy) {
             $products = array_merge($products, $strategy->getRecommendedProducts($maxProductsCount));
-            if (count($products) == $maxProductsCount) {
+            if (count($products) >= $maxProductsCount) {
                 break;
             }
         }
 
+        $products = array_slice($products, 0, $maxProductsCount);
+
         $filters = $this->filterStrategiesFactory->create();
-        $products = [];
 
         foreach ($filters as $filter) {
             $products = $filter->filterProducts($products, $userId);
-        }
-
-        if (count($products) < $maxProductsCount) {
-            foreach ($strategies as $strategy) {
-                $products = array_merge($products, $strategy->getRecommendedProducts($maxProductsCount));
-                if (count($products) == $maxProductsCount) {
-                    break;
-                }
-                $maxProductsCount = $maxProductsCount - count($products);
-            }
         }
 
         return $products;

@@ -1,6 +1,9 @@
 <?php
 namespace Rabbit\recommendation\domain\strategy;
 
+use Rabbit\recommendation\domain\product\Product;
+use Rabbit\recommendation\domain\repository\ProductRepository;
+
 class TopRecommendationStrategy implements RecommendationStrategies
 {
     /**
